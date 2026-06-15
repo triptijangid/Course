@@ -9,6 +9,22 @@
     <div class="root"></div>
     <script>
       /* Student's React.createElement code goes here */
+      // Step 1: Create the two sibling leaf elements
+        let headingElement = React.createElement(/* type */"h1", /* props */{id: "main-title"}, /* text */"Welcome to React");
+        let paragraphElement = React.createElement(/* type */"p", /* props */{id: "subtitle"}, /* text */"Built with React.createElement");
+
+// Step 2: Create the inner container, passing siblings as an array
+        let innerDiv = React.createElement(/* type */"div", /* props */{id: "content"}, [/* sibling1 */headingElement, /* sibling2 */paragraphElement]);
+
+// Step 3: Create the outer wrapper with innerDiv as its child
+        let outerDiv = React.createElement(/* type */"div", /* props */{id: "app-wrapper"}, innerDiv);
+
+// Step 4: Designate the .root div as the React root
+        let rootElement = ReactDOM.createRoot(document.querySelector(/* selector */".root"));
+
+// Step 5: Render the element tree
+        rootElement.render(outerDiv);
+
     </script>
   </body>
 </html>
